@@ -1,0 +1,510 @@
+#Akun Login
+username = 'aldy'
+password_admin = '079'
+password_user = '210'
+
+#List Barang menggunakan dictionary
+baju = {
+    'Baju Kaos' : 60000,
+    'Baju Lengan Panjang' : 800000,
+    'Baju V-Neck' : 65000,
+    'Baju Tanpa Lengan' : 50000
+}
+
+celana = {
+    'Celana Pendek' : 50000,
+    'Celana Panjang' : 70000,
+    'Celana Jeans' : 75000,
+    'Celana bekas' : 40000
+}   
+
+jaket = {
+    'Jaket Biasa' : 80000,
+    'Jaket Hoodie' : 85000,
+    'Jaket Pendek' : 75000,
+}
+
+#Fungsi Login
+def login_admin (user_name, pass_word) :
+    if user_name == username and pass_word == password_admin :
+        hasil = True
+    else :
+        hasil = False
+    return hasil
+
+def login_user (user_name, pass_word) :
+    if user_name == username and pass_word == password_user :
+        hasil = True
+    else :
+        hasil = False
+    return hasil
+
+#Prosedur Crud
+def tampilkan_data():
+    print('=======================================')
+    print('  Anda ingin melihat daftar yang mana? ')
+    print('=======================================')
+    print('1. baju\n2. celana\n3. jaket')
+    print('=======================================')
+    choice = input('Masukan pilihan anda:')
+    if choice == '1' or choice == 'baju':
+        baju
+        print('=======================================')
+        for key, value in baju.items():
+            print(key, ':', value)
+        print('=======================================')
+    elif choice == '2' or choice == 'celana':
+        celana
+        print('=======================================')
+        for key, value in celana.items():
+            print(key, ':', value)
+        print('=======================================')
+    elif choice == '3' or choice == 'jaket':
+        jaket
+        print('=======================================')
+        for key, value in jaket.items():
+            print(key, ':', value)
+        print('=======================================')
+    else:
+        print('=============')
+        print('Inputan Salah')
+        print('=============')
+        print('\n')
+
+def tambahkan_data():
+    print('=======================================')
+    print('Anda ingin menambah daftar yang mana?')
+    print('=======================================')
+    print('1. baju\n2. celana\n3. jaket')
+    print('=======================================')
+    choice = input('Masukan pilihan anda:')
+    if choice == 'baju' or choice == '1':
+        while True:
+            try:
+                print('=======================================')
+                input_baru = input('Silahkan masukan nama barang:')
+                input_harga = int(input('Silahkan masukan harga barang:'))
+                baju[input_baru] = input_harga
+                print('=======================================')
+                print('        BARANG TELAH DITAMBAHKAN       ')
+                print('=======================================')
+                break
+            except ValueError:
+                print('Inputan harga salah, mohon diulang')
+        
+    elif choice == 'celana' or choice == '2':
+        while True:
+            try:
+                print('=======================================')
+                input_baru = input('Silahkan masukan nama barang:')
+                input_harga = int(input('Silahkan masukan harga barang:'))
+                celana[input_baru] = input_harga
+                print('=======================================')
+                print('        BARANG TELAH DITAMBAHKAN       ')
+                print('=======================================')
+                break
+            except ValueError:
+                print('Inputan harga salah, mohon diulang')
+
+    elif choice == 'jaket' or choice == '3':
+        while True:
+            try:
+                print('=======================================')
+                input_baru = input('Silahkan masukan nama barang:')
+                input_harga = int(input('Silahkan masukan harga barang:'))
+                jaket[input_baru] = input_harga
+                print('=======================================')
+                print('        BARANG TELAH DITAMBAHKAN       ')
+                print('=======================================')
+                break
+            except ValueError:
+                print('Inputan harga salah, mohon diulang')
+
+    else:
+        print('=============')
+        print('Inputan Salah')
+        print('=============')
+        print('\n')
+
+def perbarui_data():
+    print('=======================================')
+    print('Anda ingin memperbarui daftar yang mana?')
+    print('=======================================')
+    print('1. baju\n2. celana\n3. jaket')
+    print('=======================================')
+    choice = input('Masukan pilihan anda:')
+    if choice == 'baju' or choice == '1':
+        while True:
+            try:
+                print('=======================================')
+                update_barang = input('Silahkan pilih barang yang ingin diperbarui:')
+                update_harga = int(input('Silahkan harga yang baru:'))
+                baju[update_barang] = update_harga
+                print('=======================================')
+                print('        BARANG TELAH DIPERBARUI        ')
+                print('=======================================')
+                break
+            except ValueError:
+                print('Inputan harga salah, mohon diulang')
+        
+    elif choice == 'celana' or choice == '2':
+        while True:
+            try:
+                print('=======================================')
+                update_barang = input('Silahkan pilih barang yang ingin diperbarui:')
+                update_harga = int(input('Silahkan harga yang baru:'))
+                celana[update_barang] = update_harga
+                print('=======================================')
+                print('        BARANG TELAH DIPERBARUI        ')
+                print('=======================================')
+                break
+            except ValueError:
+                print('Inputan harga salah, mohon diulang')
+    
+    elif choice == 'jaket' or choice == '3':
+        while True:
+            try:
+                print('=======================================')
+                update_barang = input('Silahkan pilih barang yang ingin diperbarui:')
+                update_harga = int(input('Silahkan harga yang baru:'))
+                jaket[update_barang] = update_harga
+                print('=======================================')
+                print('        BARANG TELAH DIPERBARUI        ')
+                print('=======================================')
+                break
+            except ValueError:
+                print('Inputan harga salah, mohon diulang')
+    else:
+        print('=============')
+        print('Inputan Salah')
+        print('=============')
+        print('\n')
+
+def menghapus_data():
+    print('=======================================')
+    print('Anda ingin menghapus daftar yang mana?')
+    print('=======================================')
+    print('1. baju\n2. celana\n3. jaket')
+    print('=======================================')
+    choice = input('Masukan pilihan anda:')
+    if choice == 'baju' or choice == '1':
+        print('=======================================')
+        for key, value in baju.items():
+            print(key, ':', value)
+        print('=======================================')
+        while True:
+            try:
+                del baju [input('apa yang mau dihapus:')]
+                break
+            except KeyError:
+                print('Menu Tidak Ada')
+        print('=======================================')
+        print('BARANG TELAH DIHAPUS')
+        print('=======================================')
+
+    elif choice == 'celana' or choice == '2':
+        print('=======================================')
+        for key, value in celana.items():
+            print(key, ':', value)
+        print('=======================================')
+        while True:
+            try:
+                del celana [input('apa yang mau dihapus:')]
+                break
+            except KeyError:
+                print('Menu Tidak Ada')
+        print('=======================================')
+        print('BARANG TELAH DIHAPUS')
+        print('=======================================')
+
+    elif choice == 'jaket' or choice == '3':
+        print('=======================================')
+        for key, value in jaket.items():
+            print(key, ':', value)
+        print('=======================================')
+        while True:
+            try:
+                del jaket [input('apa yang mau dihapus:')]
+                break
+            except KeyError:
+                print('Menu Tidak Ada')
+        print('=======================================')
+        print('BARANG TELAH DIHAPUS')
+        print('=======================================')
+    else:
+        print('=============')
+        print('Inputan Salah')
+        print('=============')
+        print('\n')
+
+#Def Program Crud
+def crud():
+    while True:
+        print('=======================================')
+        print('      DATABASE ADMINISTRATION          ')
+        print('      DISTRO 048//NIGHT\'sClub         ') 
+        print('=======================================')
+        print('1. Tampilkan Daftar Menu\n2. Tambahkan Daftar Menu\n3. Update Daftar Menu\n4. Hapus Daftar Menu\n0. exit')
+        print('=======================================')
+        choice = input('Masukan pilihan:')
+        print('=======================================')
+        if choice == '1':
+            tampilkan_data()
+            print('\n')
+            print('=======================================')
+            print('Tekan [Enter] untuk kembali')
+            print('=======================================')
+            input()
+
+        elif choice == '2':
+            while True:
+                tambahkan_data()
+                choice = input('Anda mau memasukan data lagi? (y/n) : ')
+                print('=======================================')
+                if choice == 'y':
+                    continue
+                elif choice == 'n':
+                    print('\n')
+                    print('=======================================')
+                    print('Tekan [Enter] untuk kembali')
+                    print('=======================================')
+                    input()
+                    break
+                else:
+                    print('=============')
+                    print('Inputan Salah')
+                    print('=============')
+
+        elif choice == '3':
+            while True:
+                perbarui_data()
+                choice = input('Anda mau memasukan data lagi? (y/n) : ')
+                print('=======================================')
+                if choice == 'y':
+                    continue
+                elif choice == 'n':
+                    print('\n')
+                    print('=======================================')
+                    print('Tekan [Enter] untuk kembali')
+                    print('=======================================')
+                    input()
+                    break
+                else:
+                    print('=============')
+                    print('Inputan Salah')
+                    print('=============')
+
+        elif choice == '4':
+            while True:
+                menghapus_data()
+                choice = input('Anda mau memasukan data lagi? (y/n) : ')
+                print('=======================================')
+                if choice == 'y':
+                    continue
+                elif choice == 'n':
+                    print('\n')
+                    print('=======================================')
+                    print('Tekan [Enter] untuk kembali')
+                    print('=======================================')
+                    input()
+                    break
+                else:
+                    print('=============')
+                    print('Inputan Salah')
+                    print('=============')
+
+        elif choice == '0':
+            print('\n')
+            print('=======================================')
+            print('ANDA TELAH KELUAR DARI PROGRAM')
+            print('=======================================')
+            break
+
+        else:
+            print('\n')
+            print('=============')
+            print('Inputan Salah')
+            print('=============')
+
+#Def Program Kasir
+def kasir():
+    while True:
+        print('=======================================')
+        print('       Selamat Datang pada Toko        ')
+        print('       DISTRO 048//NIGHT\'sClub        ')
+        print('=======================================')
+        print('1. Baju\n2. Celana\n3. Jaket\n0. exit')
+        print('=======================================')
+        pilih = input('Masukan Pilihan: ')
+        if pilih == '1':
+            baju
+            print('=======================================')
+            for key, value in baju.items():
+                print(key, ': Rp,', value)
+            print('=======================================')
+            while True:
+                try:
+                    x = baju[input('Masukan Pesanan anda? :')]
+                    y = int(input('Berapa banyak yang anda ingin beli? :'))
+                    z = input('Masukan hari : ')
+                    break
+                except ValueError:
+                    print('Inputan salah, mohon diulang')
+                except KeyError:
+                    print('Inputan salah/barang tidak ada')
+
+        elif pilih == '2':
+            celana
+            print('=======================================')
+            for key, value in celana.items():
+                print(key, ': Rp,', value)
+            print('=======================================')
+            while True:
+                try:
+                    x = celana[input('Masukan Pesanan anda? :')]
+                    y = int(input('Berapa banyak yang anda ingin beli? :'))
+                    z = input('Masukan hari : ')
+                    break
+                except ValueError:
+                    print('Inputan salah, mohon diulang')
+                except KeyError:
+                    print('Inputan salah/barang tidak ada')
+
+        elif pilih == '3':
+            jaket
+            print('=======================================')
+            for key, value in jaket.items():
+                print(key, ': Rp,', value)
+            print('=======================================')
+            while True:
+                try:
+                    x = jaket[input('Masukan Pesanan anda? :')]
+                    y = int(input('Berapa banyak yang anda ingin beli? :'))
+                    z = input('Masukan hari : ')
+                    break
+                except ValueError:
+                    print('Inputan salah, mohon diulang')
+                except KeyError:
+                    print('Inputan salah/barang tidak ada')
+
+        elif pilih == '0':
+            print('\n')
+            print('=======================================')
+            print('Anda telah keluar')
+            print('=======================================')
+            break
+
+        else:
+            print('=============')
+            print('Inputan Salah')
+            print('=============')
+            print('\n')    
+        
+        jumlah = x * y
+        if z in ('senin', 'selasa', 'kamis', 'jum\'at','minggu'):
+            print('=======================================')
+            print('mohon maaf tidak ada diskon')
+            print('Total Pembelian anda adalah Rp, ',jumlah)
+            print('=======================================')
+            while True:
+                try:
+                    bayar = int(input('Masukan Nominal Pembayaran anda: '))
+                    break
+                except ValueError:
+                    print('Inputan salah, mohon diulang')
+            print(' . . . . . .')
+            hasil = bayar - jumlah
+            print('Total Pembayaran anda adalah: Rp,', bayar)
+            print('Kembalian anda adalah: Rp,', hasil)
+            print('=======================================')
+            print('TERIMAKASIH TELAH BERBELANJA DI TOKO KAMI')
+            print('=======================================')
+            print('\n\n')
+
+        elif z == ('rabu'):
+            print('=======================================')
+            print('Karna Hari ini adalah Rabu\nAnda mendapatkan diskon sebesar 10%')
+            diskon = jumlah * (10/100)
+            hasil_diskon = jumlah - diskon
+            print('total pembelian anda adalah Rp,', hasil_diskon)
+            print('=======================================')
+            while True:
+                try:
+                    bayar = int(input('Masukan Nominal Pembayaran anda: '))
+                    break
+                except ValueError:
+                    print('Inputan salah, mohon diulang')
+            print(' . . . . . .')
+            hasil = bayar - hasil_diskon
+            print('Total Pembayaran anda adalah: Rp,', bayar)
+            print('Kembalian anda adalah: Rp,', hasil)
+            print('=======================================')
+            print('TERIMAKASIH TELAH BERBELANJA DI TOKO KAMI')
+            print('=======================================')
+            print('\n\n')
+
+        elif z == ('sabtu'):
+            print('=======================================')
+            print('Karna Hari ini adalah Sabtu\nAnda mendapatkan diskon sebesar 25%')
+            diskon = jumlah * (25/100)
+            hasil_diskon = jumlah - diskon
+            print('total pembelian anda adalah Rp,', hasil_diskon)
+            print('=======================================')
+            while True:
+                try:
+                    bayar = int(input('Masukan Nominal Pembayaran anda: '))
+                    break
+                except ValueError:
+                    print('Inputan salah, mohon diulang')
+            print(' . . . . . .')
+            hasil = bayar - hasil_diskon
+            print('Total Pembayaran anda adalah: Rp,', bayar)
+            print('Kembalian anda adalah: Rp,', hasil)
+            print('=======================================')
+            print('TERIMAKASIH TELAH BERBELANJA DI TOKO KAMI')
+            print('=======================================')
+            print('\n\n')
+
+        else:
+            print('=============')
+            print('Inputan Salah')
+            print('=============')
+            print('\n')
+
+#Program Utama
+while True:
+    print('=======================================')
+    print('Selamat datang Pada Program Administrasi')
+    print('       DISTRO 048//NIGHT\'sClub        ')
+    print('=======================================')
+    print('             Menu Pilihan              ')
+    print('=======================================')
+    print('1. Masukan Akun\n2. Keluar')
+    print('=======================================')
+    choice = input('masukan pilihan: ')
+    if choice == '1':
+        user_name = input('Masukan Username Anda: ')
+        pass_word = input('Masukan Password Anda: ')
+        admin = login_admin(user_name, pass_word)
+        user = login_user(user_name, pass_word)
+        if admin == True:
+            crud()
+        elif user == True:
+            kasir()
+        else:
+            print('=============')
+            print('Username/password Salah')
+            print('=============')
+            print('\n')
+
+    elif choice == '2':
+        print('=================')
+        print('ANDA TELAH KELUAR')
+        print('=================')
+        break
+
+    else:
+            print('=============')
+            print('Input Salah')
+            print('=============')
+            print('\n')
